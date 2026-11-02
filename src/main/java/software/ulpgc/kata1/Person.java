@@ -1,13 +1,5 @@
 package software.ulpgc.kata1;
 
-public class Person {
-    private final String name;
+public record Person(String name) {
 
-    public Person(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
 }
