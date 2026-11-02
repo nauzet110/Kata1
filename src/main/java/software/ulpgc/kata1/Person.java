@@ -1,5 +1,15 @@
 package software.ulpgc.kata1;
 
-public record Person(String name) {
+import java.time.LocalDate;
 
+public record Person(String name, LocalDate birthday) {
+
+    private static final int DAYS_PER_YEAR = 365;
+
+    private int age(){
+        return toYears(LocalDate.now().toEpochDay() - birthday.toEpochDay());
+    }
+    private int toYears(long days){
+        return (int) (days / DAYS_PER_YEAR);
+    }
 }
